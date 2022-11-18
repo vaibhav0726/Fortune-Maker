@@ -1,0 +1,24 @@
+<% include('../layouts/header.ejs') %>
+
+<link rel="stylesheet" href="./style/style.css">
+
+<div class="user-form">
+    <div class="modalForm">
+        <div class="fas fa-close" id="cross-btn"></div>
+        <h1>Forgot Password</h1>
+        <% 
+            if(typeof message !== 'undefined'){
+                %> <h4><%= message %> </h4>
+                <%
+            }
+        %> 
+        <form action="/forget" method="post" enctype="multipart/form-data" class="signIn">
+            <div class="inputGroup">
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <input type="submit" value="Send Reset Link" class="btn">
+        </form>
+    </div>
+</div>
+
+<% include('../layouts/footer.ejs') %>

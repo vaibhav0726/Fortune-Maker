@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="./images/Screenshot (8).png" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#resources">resources</a>
+            <a href="#videos">videos</a>
+            <a href="#job">job</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#our-team">Our Team</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="Search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="sign">
+            <div class="btn in">Sign In</div>
+            <div class="btn up">Sign Up</div>
+        </div>
+
+    </header>
+
+    <!-- <div class="user-form">
+        <div class="modalForm">
+            <div class="fas fa-close" id="cross-btn"></div>
+            <h1>User Registration</h1>
+            <form action="/register" method="post" enctype="multipart/form-data" class="signUp">
+            <div class="inputGroup">
+                <input type="text" name="name" placeholder="Enter Your Name" required>
+            </div>
+            <div class="inputGroup">
+                <input type="email" name="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="inputGroup">
+                <input type="number" name="uniRoll" id="" placeholder="University RollNo">
+            </div>
+            <div class="inputGroup">
+                <input type="password" name="password" placeholder="Enter Your password" required>
+            </div>
+            <div class="inputGroup">
+                <input type="string" name="mno" placeholder="Enter Your Phone Number" required>
+            </div>
+            <input type="submit" value="register" class="btn">
+            </form>
+            <% 
+                if(typeof message !== 'undefined'){
+                    %> <p style="color: green;"> <%= message %> </p>
+                    <%
+                }
+            %> 
+
+            <h1>Login Form</h1>
+            <% 
+                if(typeof message !== 'undefined'){
+                    %> <h4><%= message %> </h4>
+                    <%
+                }
+            %> 
+            <form action="/login" method="post" enctype="multipart/form-data" class="signIn">
+                <div class="inputGroup">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="inputGroup">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <input type="submit" value="login" class="btn">
+            </form>
+            <a href="/forget" style="left:0%">Forget password</a>
+        </div>
+    </div> -->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h2>Teachers open the door, but you must <span>enter by yourself.</span></h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat labore, sint cupiditate distinctio
+                tempora reiciendis.</p>
+            <a href="#" class="btn">subscribe us</a>
+        </div>
+
+    </section>
+
+    <section id="about" >
+        <div class="section-about">
+            <div class="container-about">
+                <div class="title">
+                    <h1>About Fortune Maker</h1>
+                </div>
+                
+                <div class="content-section">
+                    <div class="content">
+                        <h3>Site that connects Seeker to keeper !</h3>
+                        <p>We are here to save you from "Oops !" or "What if!".We provide you with each and every update of the ongoing and upcoming events, 
+                            So you would never miss any chance to race your fingers on keyboard or to race you feet on the dance floor. So stay tuned and pull up your socks for the next mega Dhamaka!!! </p>
+                            <br>
+                            <br>
+                        <div class="button">
+                            <a href="./pages/aboutTeam.html">Read More</a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="image-section">
+
+                    <video controls loop autoplay src="./video/WhatsApp Video 2022-07-27 at 11.55.34 AM.mp4"></video>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <h2 class="card-section">Resources</h2>
+    <section class="card-section">
+        
+        <div class="container">
+            <div class="card">
+                <div class="front">
+                    <div class="img">
+                        <img src="https://www.freecodecamp.org/news/content/images/2021/06/1_s6hhrgR5_tXpO_j7uKaHMw-1.png" alt="">
+                    </div>
+                    <h3>Data Structures</h3>
+                </div>
+                <div class="back">
+                    <h3>Data Structures</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quidem dolore nisi velit.</p>
+                    <div class="btn"> 
+                        <a href="https://drive.google.com/drive/folders/1cmSWUeoUhS_FZ-bgi1ytXO0P40LZ66lR?usp=share_link" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div class="front">
+                    <div class="img">
+                        <img src="https://previews.123rf.com/images/radiantskies/radiantskies1211/radiantskies121100041/16084060-abstract-word-cloud-for-discrete-mathematics-with-related-tags-and-terms.jpg" alt="">
+                    </div>
+                    <h3>Discrete Maths</h3>
+                </div>
+                <div class="back">
+                    <h3>Discrete Maths</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quidem dolore nisi velit.</p>
+                    <div class="btn"> 
+                        <a href="https://drive.google.com/drive/folders/10kIB_hxW9ydIZZtuyTk9PQdLly-Lr5Z4?usp=share_link" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div class="front">
+                    <div class="img">
+                        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/UJP73H47EBD35J6LK26NECNWN4.jpg" alt="">
+                    </div>
+                    <h3>Microprocessor</h3>
+                </div>
+                <div class="back">
+                    <h3>Microprocessor</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quidem dolore nisi velit.</p>
+                    <div class="btn"> 
+                        <a href="https://drive.google.com/drive/folders/1QPeog-qdTySEwKkXAG0bIwrtpVslcGW-?usp=share_link" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div class="front">
+                    <div class="img">
+                        <img src="https://thumbs.dreamstime.com/z/dbms-line-art-concept-vector-database-management-systemt-round-banner-web-resources-programming-server-elements-77290437.jpg" alt="">
+                    </div>
+                    <h3>Database Management System</h3>
+                </div>
+                <div class="back">
+                    <h3>Database Management System</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quidem dolore nisi velit.</p>
+                    <div class="btn"> 
+                        <a href="https://drive.google.com/drive/folders/1ypcLTIOhxW0nVGwNPc2uh5oSZBgHM54x?usp=share_link" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="card-section btn" target="_blank" id="load-more-btn">Explore Courses </div>
+
+    <h2 class="team-h2">OUR TEAM</h2>
+    <div class="main">
+        <div class="profile-card">
+            <div class="img">
+                <img src="./images/vaibhav.png">
+            </div>
+            <div class="caption">
+                <h3>Vaibhav Varshney</h3>
+                <p>Full Stack Developer</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="img">
+                <img src="./images/santosh.png">
+            </div>
+            <div class="caption">
+                <h3>Santosh Mourya</h3>
+                <p>Full Stack Developer</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="img">
+                <img src="./images/himanshu.png">
+            </div>
+            <div class="caption">
+                <h3>Himanshu Khuswaha</h3>
+                <p>Full Stack Developer</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="img">
+                <img src="./images/mradul.png">
+            </div>
+            <div class="caption">
+                <h3>Mradul Varshney</h3>
+                <p>Full Stack Developer</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="img">
+                <img src="./images/garima.png">
+            </div>
+            <div class="caption">
+                <h3>Garima Gautam</h3>
+                <p>Full Stack Developer</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <h3>Fortune<span>Maker</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+                |
+                <a href="#">Blog</a>
+            </p>
+
+            <p class="footer-company-name">Copyright © 2022 <strong>Fortune Maker</strong> All rights reserved</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>GLA University, Mathura</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 819*****43</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="">fortune.maker@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                <strong>Fortune Maker</strong> is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, delectus Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque quis
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
