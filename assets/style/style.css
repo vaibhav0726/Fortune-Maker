@@ -41,7 +41,6 @@ html{
 .btn:hover{
     background-color: rgb(250, 244, 244);
     color: var(--main-color);
-    font-weight: bolder;
     transition: ease-in-out 0.5s;
 }
 
@@ -50,15 +49,21 @@ html{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:1px 7%;
+    padding:10px 7%;
     border-bottom: var(--border);
     position: fixed;
     top:0; left: 0; right: 0;
     z-index: 1000;
 }
 
-.header .logo img{
-    height: 4rem;
+.header .logo h3 {
+    color: #ffffff;
+    font: normal 33px 'Cookie', cursive;
+    margin: 0;
+}
+
+.header .logo h3 span {
+    color: #e0ac1c;
 }
 
 .header .navbar a{
@@ -147,14 +152,16 @@ html{
     transition: ease-in-out 0.5s;
 }
 
-.user-form{
+/* .user-form{
     width: 100vw;
     height: 100vh;
-    /* background-color: #37373b; */
-    position: absolute;
+    background-color: #37373b;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
+    display: none;
 }
 .user-form .modalForm{
     width: 400px;
@@ -169,21 +176,21 @@ html{
     position: absolute;
 }
 
-.user-form .modalForm #cross-btn{
+#cross-btn{
     font-size: 30px;
     position: absolute;
-    right: 10px;
-    top: 3px;
+    right: 20px;
+    top: 10px;
     cursor: pointer;    
 }
 
 
 .user-form .modalForm .signUp{
-    /* display: none; */
+    display: none;
 }
 
 .user-form .modalForm .signIn{
-    display: block;
+    display: none;
 }
 
 
@@ -212,7 +219,7 @@ html{
     margin: 1em 0;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px , rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
+} */
 
 .home{
     min-height: 100vh;
@@ -361,7 +368,19 @@ html{
     }
 }
 
+/* Heading */
+#heading{
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 2.8rem;
+}
+
 /* RESOURCES SECTION */
+.resourse div h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
 .card-section{
     /* background-color: #212124; */
     display: flex;
@@ -404,7 +423,7 @@ html{
 @keyframes back {
     0%{
         opacity: 0;
-        transform: translateY(100%);
+        /* transform: translateY(50%); */
     }
     100%{
         opacity: 1;
@@ -412,21 +431,23 @@ html{
     }
 }
 
-.card{
+.card-section .container .card{
     width: 100%;
-    height: 100%;
+    height: 90%;
     position: relative;
     border: none;
 }
-
-.card .front,.back{
+.card-section .container h2{
+    text-align: center;
+}
+.card-section .container .card .front,.back{
     border-radius: 15px;
     width: 100%;
     height: 100%;
     box-shadow: 0 0 5px 2px rgba(50,50,50,.3);
     
 }
-.card .front{
+.card-section .container .card .front{
     position: absolute;
     display: flex;
     justify-content: center;
@@ -445,43 +466,45 @@ html{
         height: 100%;
     }
 }
-.card .front img{
+.card-section .container .card .front img{
     opacity: 0.8;
 }
-.card .front h3{
+.card-section .container .card .front h3{
     position: absolute;
     bottom: 20px;
     font-weight: 1000;
     font-size: 2rem;
-    /* color: yellow; */
+    color: rgb(255, 0, 0);
 }
-.card .back{
+.card-section .container .card .back{
     position: absolute;
     background: linear-gradient(to right, #0f78a5, #297b94, #06242e);
     display: none;
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
-    padding: 5px;
 }
 
-.card .back h3{
+.card-section .container .card .back h3{
     color: var(--main-color);
 }
 
-.card .back p{
-    font-size: 1.5rem;
+.card-section .container .card .back p{
+    font-size: 1.3rem;
     color: white;
 }
 
-.container .card .back .btn{
+.card-section .container .card .back .btn{
     background-color: rgb(252, 246, 246);
-    margin: 0 30px 0 30px;
-    padding: 0.3 2rem;
-    font-size: small;
+    margin: 0 50px 0 50px;
+    padding: 0.9rem 0.6rem;
+    font-size: 15px;
+    color: blue;
+    font-weight: bolder;
+    text-decoration: underline;
 }
 
-.container:hover .card .back .btn a{
+.card-section .container:hover .card .back .btn a{
     color: blue;
     font-weight: bolder;
 }
@@ -489,7 +512,24 @@ html{
 #load-more-btn{
     margin: auto;
     width: 200px;
-    padding: 10px;
+    padding:.9rem 1rem;
+    font-size: 1.7rem;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+#load-more-btn a{
+    color: white;
+    text-decoration: none;
+}
+
+#load-more-btn:hover{
+    background-color: rgb(250, 244, 244);
+}
+#load-more-btn:hover a{
+    background-color: rgb(250, 244, 244);
+    color: var(--main-color);
+    transition: ease-in-out 0.5s;
 }
 
 /* Our Team */
@@ -515,7 +555,7 @@ html{
     border-radius: 50%;
     box-shadow: 0 0 22px #3336;
     transition: .6s;
-    margin: 0 15px;
+    margin: 18px 15px;
   }
   .profile-card:hover{
     border-radius: 10px;
@@ -526,10 +566,10 @@ html{
     width: 100%;
     height: 100%;
     transition: .6s;
-    z-index: 99;
+    /* z-index: 99; */
   }
   .profile-card:hover .img{
-    transform: translateY(-60px);
+    transform: translateY(-50px);
   }
   .profile-card .img img{
     width: 100%;
@@ -550,7 +590,7 @@ html{
     opacity: 1;
   }
   .caption h3{
-    font-size: 18px;
+    font-size: 15px;
   }
   .caption p{
     font-size: 16px;
@@ -569,10 +609,10 @@ html{
 
   /* Footer Section */
   
-footer {
+/* footer {
     position: fixed;
     bottom: 0;
-}
+} */
 
 @media (max-height:800px) {
     footer {
@@ -833,5 +873,33 @@ footer {
     .card-section .container{
         width: 250px;
         height: 300px;
+    }
+
+    .header .logo h3 {
+        color: #ffffff;
+        font: normal 18px 'Cookie', cursive;
+        margin: 0;
+    }
+    
+    .header .logo h3 span {
+        color: #e0ac1c;
+    }
+
+    .footer-distributed{
+        padding: 10px;
+    }
+    .footer-distributed h3 {
+        color: #ffffff;
+        font: normal 22px 'Cookie', cursive;
+        margin: 0;
+    }
+    
+    
+    .footer-distributed h3 span {
+        color: #e0ac1c;
+    }
+
+    .footer-distributed .footer-center div p{
+        font-size: 8px;
     }
 }

@@ -44,6 +44,9 @@ user_route.get('/register', auth.isLogout, user_controller.loadRegister);
 // getting the user data from form
 user_route.post('/register', upload.single('image'), user_controller.insertUser);
 
+// for loading more resources
+user_route.get('/moreResources', user_controller.loadMoreResources);
+
 // setting route for verified mail
 user_route.get('/verify', user_controller.verifyMail);
 
@@ -70,6 +73,8 @@ user_route.get('/forget-password', auth.isLogout, user_controller.forgetPassword
 
 // for setting the new password
 user_route.post('/forget-password', upload.single('image'), user_controller.resetPassword);
+
+
 
 // to use this route we need to export it
 module.exports = user_route;

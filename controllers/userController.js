@@ -307,6 +307,14 @@ const resetPassword = async(req, res) => {
     }
 };
 
+const loadMoreResources = async(req, res) => {
+    try {
+        return res.render('moreResources');
+    } catch (error) {
+        console.log("error while loading more resources", error.message);
+    }
+};
+
 // exporting because anyone can use the register form from anywhere
 module.exports = {
     loadRegister,
@@ -319,5 +327,6 @@ module.exports = {
     forgetLoad,
     verifyForget,
     forgetPasswordLoad,
-    resetPassword
+    resetPassword,
+    loadMoreResources
 }
