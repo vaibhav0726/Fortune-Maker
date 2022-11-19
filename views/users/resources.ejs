@@ -5,29 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fortune Maker</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="./style/cardStyle.css">
 </head>
 
 <body>
 
     <header class="header">
 
-        <a href="#" class="logo">
-            <img src="./images/Screenshot (8).png" alt="">
-        </a>
+        <div class="logo">
+            <h3>Fortune<span>Maker</span></h3>
+        </div>
 
         <nav class="navbar">
-            <a href="#home">home</a>
+            <a href="/">home</a>
             <a href="#about">about</a>
             <a href="#resources">resources</a>
-            <a href="#videos">videos</a>
             <a href="#job">job</a>
-            <a href="#quiz">Quiz</a>
+            <!-- <a href="#quiz">Quiz</a> -->
             <a href="#our-team">Our Team</a>
             <a href="#contact">contact</a>
         </nav>
@@ -42,59 +53,44 @@
             <label for="search-box" class="fas fa-search"></label>
         </div>
 
-        <div class="sign">
+        <!-- <div class="sign">
             <div class="btn in">Sign In</div>
             <div class="btn up">Sign Up</div>
-        </div>
+        </div> -->
 
     </header>
 
     <!-- <div class="user-form">
         <div class="modalForm">
             <div class="fas fa-close" id="cross-btn"></div>
-            <h1>User Registration</h1>
-            <form action="/register" method="post" enctype="multipart/form-data" class="signUp">
-            <div class="inputGroup">
-                <input type="text" name="name" placeholder="Enter Your Name" required>
-            </div>
-            <div class="inputGroup">
-                <input type="email" name="email" placeholder="Enter Your Email" required>
-            </div>
-            <div class="inputGroup">
-                <input type="number" name="uniRoll" id="" placeholder="University RollNo">
-            </div>
-            <div class="inputGroup">
-                <input type="password" name="password" placeholder="Enter Your password" required>
-            </div>
-            <div class="inputGroup">
-                <input type="string" name="mno" placeholder="Enter Your Phone Number" required>
-            </div>
-            <input type="submit" value="register" class="btn">
+            <form action="" class="signUp">
+                <div class="inputGroup">
+                    <input type="text" name="" id="" placeholder="Name">
+                </div>
+                <div class="inputGroup">
+                    <input type="text" name="" id="" placeholder="University Roll No.">
+                </div>
+                <div class="inputGroup">
+                    <input type="text" name="" id="" placeholder="Email Address">
+                </div>
+                <div class="inputGroup">
+                    <input type="text" name="" id="" placeholder="New Password">
+                </div>
+                <div class="inputGroup">
+                    <input type="text" name="" id="" placeholder="Confirm Password">
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
             </form>
-            <% 
-                if(typeof message !== 'undefined'){
-                    %> <p style="color: green;"> <%= message %> </p>
-                    <%
-                }
-            %> 
 
-            <h1>Login Form</h1>
-            <% 
-                if(typeof message !== 'undefined'){
-                    %> <h4><%= message %> </h4>
-                    <%
-                }
-            %> 
-            <form action="/login" method="post" enctype="multipart/form-data" class="signIn">
+            <form action="" class="signIn">
                 <div class="inputGroup">
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="text" name="" id="" placeholder="Email Address">
                 </div>
                 <div class="inputGroup">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="text" name="" id="" placeholder="Password">
                 </div>
-                <input type="submit" value="login" class="btn">
+                <button type="submit" class="btn">Sign In</button>
             </form>
-            <a href="/forget" style="left:0%">Forget password</a>
         </div>
     </div> -->
 
@@ -102,27 +98,29 @@
 
         <div class="content">
             <h2>Teachers open the door, but you must <span>enter by yourself.</span></h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat labore, sint cupiditate distinctio
-                tempora reiciendis.</p>
-            <a href="#" class="btn">subscribe us</a>
+            <p>It's a child's play to find well-fined industry-level resources and jobs here.</p>
+            <a href="/login" class="btn">Login</a>
+            <a href="/register" class="btn" style="margin-left: 10px;">Register</a>
         </div>
 
     </section>
 
-    <section id="about" >
+    <section id="about">
         <div class="section-about">
             <div class="container-about">
                 <div class="title">
                     <h1>About Fortune Maker</h1>
                 </div>
-                
+
                 <div class="content-section">
                     <div class="content">
                         <h3>Site that connects Seeker to keeper !</h3>
-                        <p>We are here to save you from "Oops !" or "What if!".We provide you with each and every update of the ongoing and upcoming events, 
-                            So you would never miss any chance to race your fingers on keyboard or to race you feet on the dance floor. So stay tuned and pull up your socks for the next mega Dhamaka!!! </p>
-                            <br>
-                            <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum veritatis tempora earum dolores
+                            ex! Dolorum eius quos quis voluptate dolore. Id harum exercitationem ab odit, nulla libero
+                            eveniet eligendi doloremque veritatis modi laudantium, fugiat animi debitis aliquam velit
+                            tempora. </p>
+                        <br>
+                        <br>
                         <div class="button">
                             <a href="./pages/aboutTeam.html">Read More</a>
                         </div>
@@ -142,85 +140,109 @@
 
     </section>
 
-    <h2 class="card-section">Resources</h2>
+    <h2 id="heading">Resources</h2>
     <section class="card-section">
-        
+
         <div class="container">
+            <h2>Data Structures</h2>
             <div class="card">
                 <div class="front">
                     <div class="img">
-                        <img src="https://www.freecodecamp.org/news/content/images/2021/06/1_s6hhrgR5_tXpO_j7uKaHMw-1.png" alt="">
+                        <img src="https://www.freecodecamp.org/news/content/images/2021/06/1_s6hhrgR5_tXpO_j7uKaHMw-1.png"
+                            alt="">
                     </div>
-                    <h3>Data Structures</h3>
+                    <!-- <h3>Data Structures</h3> -->
                 </div>
                 <div class="back">
-                    <h3>Data Structures</h3>
+                    <!-- <h3>Data Structures</h3> -->
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quidem dolore nisi velit.</p>
-                    <div class="btn"> 
-                        <a href="https://drive.google.com/drive/folders/1cmSWUeoUhS_FZ-bgi1ytXO0P40LZ66lR?usp=share_link" target="_blank">Learn More</a>
+                    <div class="btn">
+                        <a href="https://drive.google.com/drive/folders/1cmSWUeoUhS_FZ-bgi1ytXO0P40LZ66lR?usp=share_link"
+                            target="_blank">Learn More</a>
+                    </div>
+                    <div class="btn" onclick="load('dsa')">
+                        Videos
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="container">
+            <h2>Discrete Maths</h2>
             <div class="card">
                 <div class="front">
                     <div class="img">
-                        <img src="https://previews.123rf.com/images/radiantskies/radiantskies1211/radiantskies121100041/16084060-abstract-word-cloud-for-discrete-mathematics-with-related-tags-and-terms.jpg" alt="">
+                        <img src="https://previews.123rf.com/images/radiantskies/radiantskies1211/radiantskies121100041/16084060-abstract-word-cloud-for-discrete-mathematics-with-related-tags-and-terms.jpg"
+                            alt="">
                     </div>
-                    <h3>Discrete Maths</h3>
+                    <!-- <h3>Discrete Maths</h3> -->
                 </div>
                 <div class="back">
-                    <h3>Discrete Maths</h3>
+                    <!-- <h3>Discrete Maths</h3> -->
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quidem dolore nisi velit.</p>
-                    <div class="btn"> 
-                        <a href="https://drive.google.com/drive/folders/10kIB_hxW9ydIZZtuyTk9PQdLly-Lr5Z4?usp=share_link" target="_blank">Learn More</a>
+                    <div class="btn">
+                        <a href="https://drive.google.com/drive/folders/10kIB_hxW9ydIZZtuyTk9PQdLly-Lr5Z4?usp=share_link"
+                            target="_blank">Learn More</a>
+                    </div>
+                    <div class="btn" onclick="load('discrete')">
+                        Videos
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="container">
+            <h2>Microprocessor</h2>
             <div class="card">
                 <div class="front">
                     <div class="img">
-                        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/UJP73H47EBD35J6LK26NECNWN4.jpg" alt="">
+                        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/UJP73H47EBD35J6LK26NECNWN4.jpg"
+                            alt="">
                     </div>
-                    <h3>Microprocessor</h3>
+                    <!-- <h3>Microprocessor</h3> -->
                 </div>
                 <div class="back">
-                    <h3>Microprocessor</h3>
+                    <!-- <h3>Microprocessor</h3> -->
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quidem dolore nisi velit.</p>
-                    <div class="btn"> 
-                        <a href="https://drive.google.com/drive/folders/1QPeog-qdTySEwKkXAG0bIwrtpVslcGW-?usp=share_link" target="_blank">Learn More</a>
+                    <div class="btn">
+                        <a href="https://drive.google.com/drive/folders/1QPeog-qdTySEwKkXAG0bIwrtpVslcGW-?usp=share_link"
+                            target="_blank">Learn More</a>
+                    </div>
+                    <div class="btn" onclick="load('microprocessor')">
+                        Videos
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="container">
+            <h2>DBMS</h2>
             <div class="card">
                 <div class="front">
                     <div class="img">
-                        <img src="https://thumbs.dreamstime.com/z/dbms-line-art-concept-vector-database-management-systemt-round-banner-web-resources-programming-server-elements-77290437.jpg" alt="">
+                        <img src="https://thumbs.dreamstime.com/z/dbms-line-art-concept-vector-database-management-systemt-round-banner-web-resources-programming-server-elements-77290437.jpg"
+                            alt="">
                     </div>
-                    <h3>Database Management System</h3>
+                    <!-- <h3>Database Management System</h3> -->
                 </div>
                 <div class="back">
-                    <h3>Database Management System</h3>
+                    <!-- <h3>Database Management System</h3> -->
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quidem dolore nisi velit.</p>
-                    <div class="btn"> 
-                        <a href="https://drive.google.com/drive/folders/1ypcLTIOhxW0nVGwNPc2uh5oSZBgHM54x?usp=share_link" target="_blank">Learn More</a>
+                    <div class="btn">
+                        <a href="https://drive.google.com/drive/folders/1ypcLTIOhxW0nVGwNPc2uh5oSZBgHM54x?usp=share_link"
+                            target="_blank">Learn More</a>
+                    </div>
+                    <div class="btn" onclick="load('dbms')">
+                        Videos
                     </div>
                 </div>
             </div>
         </div>
 
     </section>
-    <div class="card-section btn" target="_blank" id="load-more-btn">Explore Courses </div>
+    <div class="card-section btn" id="load-more-btn"> <a href="/moreResources" target="_blank"> Explore Courses </a></div>
 
-    <h2 class="team-h2">OUR TEAM</h2>
+    <h2 id="heading">OUR TEAM</h2>
     <div class="main">
         <div class="profile-card">
             <div class="img">
@@ -252,10 +274,10 @@
         </div>
         <div class="profile-card">
             <div class="img">
-                <img src="./images/himanshu.png">
+                <img src="./images/garima.png">
             </div>
             <div class="caption">
-                <h3>Himanshu Khuswaha</h3>
+                <h3>Garima Gautam</h3>
                 <p>Full Stack Developer</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -280,10 +302,10 @@
         </div>
         <div class="profile-card">
             <div class="img">
-                <img src="./images/garima.png">
+                <img src="./images/himanshu.png">
             </div>
             <div class="caption">
-                <h3>Garima Gautam</h3>
+                <h3>Himanshu Khuswaha</h3>
                 <p>Full Stack Developer</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -330,7 +352,8 @@
         <div class="footer-right">
             <p class="footer-company-about">
                 <span>About the company</span>
-                <strong>Fortune Maker</strong> is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, delectus Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque quis
+                <strong>Fortune Maker</strong> is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+                delectus Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque quis
             </p>
             <div class="footer-icons">
                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -342,10 +365,188 @@
         </div>
     </footer>
 
+    <div class="body dsa">
+        <section class="videos">
+            <div class="fas fa-close v-cross-btn" onclick="closed('dsa')"></div>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="./Himanshu/img/Anuj Bhaiya.jpg" alt="">
+                            </div>
+
+                            <div class="name-profession">
+                                <span class="name">Anuj Bhaiya</span>
+                            </div>
+
+                            <div class="button">
+                                <button class="hireMe">Get Videos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>2</h4>
+                </div>
+                <div class="item">
+                    <h4>3</h4>
+                </div>
+                <div class="item">
+                    <h4>4</h4>
+                </div>
+                <div class="item">
+                    <h4>5</h4>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="body discrete">
+        <section class="videos">
+            <div class="fas fa-close v-cross-btn" onclick="closed('discrete')"></div>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="./Himanshu/img/Anuj Bhaiya.jpg" alt="">
+                            </div>
+
+                            <div class="name-profession">
+                                <span class="name">Anuj Bhaiya</span>
+                            </div>
+
+                            <div class="button">
+                                <button class="hireMe">Get Videos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>2</h4>
+                </div>
+                <div class="item">
+                    <h4>3</h4>
+                </div>
+                <div class="item">
+                    <h4>4</h4>
+                </div>
+                <div class="item">
+                    <h4>5</h4>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="body microprocessor">
+        <section class="videos">
+            <div class="fas fa-close v-cross-btn" onclick="closed('microprocessor')"></div>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="./Himanshu/img/garima.png" alt="">
+                            </div>
+
+                            <div class="name-profession">
+                                <span class="name">Anuj Bhaiya</span>
+                            </div>
+
+                            <div class="button">
+                                <button class="hireMe">Get Videos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>2</h4>
+                </div>
+                <div class="item">
+                    <h4>3</h4>
+                </div>
+                <div class="item">
+                    <h4>4</h4>
+                </div>
+                <div class="item">
+                    <h4>5</h4>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="body dbms">
+        <section class="videos">
+            <div class="fas fa-close v-cross-btn" onclick="closed('dbms')"></div>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="./Himanshu/img/garima.png" alt="">
+                            </div>
+
+                            <div class="name-profession">
+                                <span class="name">Anuj Bhaiya</span>
+                            </div>
+
+                            <div class="button">
+                                <button class="hireMe">Get Videos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>2</h4>
+                </div>
+                <div class="item">
+                    <h4>3</h4>
+                </div>
+                <div class="item">
+                    <h4>4</h4>
+                </div>
+                <div class="item">
+                    <h4>5</h4>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
+
     <script src="./scripts/script.js"></script>
-</body>
+    </div>
 
 </html>
