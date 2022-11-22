@@ -2,6 +2,7 @@
 require('dotenv').config();
 const User = require('../models/userModel');
 const Job = require('../models/jobModel');
+const Subjects = require('../models/subjectModel');
 
 
 // using bcrypt to encrypt password
@@ -78,28 +79,35 @@ const insertUser = async(req, res) =>{
     try {
         const spassword = await securePassword(req.body.password);
         let regex = /[a-z0-9]+@gla.ac.in/;
+        let nameRegex = /^[A-Za-z]+$/;
+        
         if(regex.test(req.body.email)){
-            const user = new User({
-                name: req.body.name,
-                email: req.body.email,
-                mobile: req.body.mno,
-                uniRoll: req.body.uniRoll,
-                password: spassword,
-                is_admin: 0,
-            });
-    
-            // using await because it returns a promise
-            const userData = await user.save();
-    
-            // if userData saved successfully
-            if(userData){
-    
-                sendVerifyMail(req.body.name, req.body.email, userData._id);
-    
-                res.render('registration', {message: 'Your registration has been successfully completed, Please verify your mail'});
+            if(nameRegex.test(req.body.name)){
+                const user = new User({
+                    name: req.body.name,
+                    email: req.body.email,
+                    mobile: req.body.mno,
+                    uniRoll: req.body.uniRoll,
+                    password: spassword,
+                    is_admin: 0,
+                });
+        
+                // using await because it returns a promise
+                const userData = await user.save();
+        
+                // if userData saved successfully
+                if(userData){
+        
+                    sendVerifyMail(req.body.name, req.body.email, userData._id);
+        
+                    res.render('registration', {message: 'Your registration has been successfully completed, Please verify your mail'});
+                }
+                else{
+                    res.render('registration', {message: 'User registration failed'});
+                }
             }
             else{
-                res.render('registration', {message: 'User registration failed'});
+                res.render('registration', {message: 'Name Should be in string'});
             }
         }
         else{
@@ -315,6 +323,87 @@ const loadMoreResources = async(req, res) => {
     }
 };
 
+const notFound = async(req, res) => {
+    try {
+        return res.render('404', {message: 'The page you are looking for not avaible!'});
+    } catch (error) {
+        console.log("error while loading 404", error.message);
+    }
+};
+
+const displaySubject = async(req, res) => {
+    try {
+        const subjectName = req.query.sub;
+
+        // console.log(subjectName);
+        // console.log(Subjects.findOne({name: subjectName}));
+        
+        
+        
+        const subject = await Subjects.find({name: subjectName}).count() > 0;
+        if(subject){
+            console.log('found!');
+            Subjects.find({name: subjectName}, function(err, subject){
+                if(err){
+                    console.log('error while sending the subject list to blog', err.message);
+                    return res.render('404', {message: 'the page you are looking for not available!'});
+                }
+                else{
+                    console.log('found!');
+                    console.log(subject[0].is_verified);
+                    if(subject[0].is_verified === 1){
+                        console.log('inside the page you are looking for');
+                        return res.render('blog', {message: 'successfully', name: subjectName, subject_list: subject[0]});
+                    }
+                    else{
+                        console.log('inside the page you are not looking for');
+
+                        return res.render('404', {message: 'the page you are looking for not available!'});
+                    }
+                }
+            });
+            // return res.render('blog', {message: 'successfully', name: subjectName, subject_list: Subjects});
+        }
+        else{
+            return res.render('404', {message: 'the page you are looking for not available!'});
+        }
+
+
+    } catch (error) {
+        console.log('error while rendering subjects', error.message);
+    }
+};
+
+// for rendering form for blog
+const loadBlog = async(req, res) => {
+    try {
+        return res.render('postBlog');
+    } catch (error) {
+        console.log('error while loading blog', error.message);
+    }
+};
+
+// storing the blog
+const takeBlog = async(req, res) => {
+    try {
+        const new_subject = new Subjects({
+            name: req.body.name,
+            description: req.body.description
+        });
+        const userSubject = await new_subject.save();
+        if(userSubject){
+
+
+            return res.redirect('/moreResources');
+        }
+        else{
+            return res.redirect('/moreResources');
+        }
+    } catch (error) {
+        console.log("error while storing blog", error.message);
+    }
+};
+
 // exporting because anyone can use the register form from anywhere
 module.exports = {
     loadRegister,
@@ -328,5 +417,9 @@ module.exports = {
     verifyForget,
     forgetPasswordLoad,
     resetPassword,
-    loadMoreResources
+    loadMoreResources,
+    notFound,
+    displaySubject,
+    loadBlog,
+    takeBlog
 }

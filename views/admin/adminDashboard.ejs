@@ -1,0 +1,22 @@
+<h1>HI i am admin</h1>
+
+<a href="/admin/logout">Logout</a>
+<br>
+<br>
+<a href="/admin/addJobs">addJObs</a>
+
+<% if(subject_list !== 'undefined' ){ %>
+    <% for (let i of subject_list){ %>
+        <% if(i.is_verified === 0){ %>
+            <p> <%= i.name%>
+                <%= i.description%>
+                <%= i._id%>
+                <a href="/admin/addSubject/?id=<%= i._id%>">Accept</a>
+                <a href="/admin/rejectSubject/?id=<%= i._id%>">Reject</a>
+            </p>
+        <% }
+        } 
+    }
+%> 
+
+

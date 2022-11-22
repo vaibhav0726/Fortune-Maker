@@ -45,7 +45,7 @@ user_route.get('/register', auth.isLogout, user_controller.loadRegister);
 user_route.post('/register', upload.single('image'), user_controller.insertUser);
 
 // for loading more resources
-user_route.get('/moreResources', user_controller.loadMoreResources);
+user_route.get('/moreResources',  user_controller.loadMoreResources);
 
 // setting route for verified mail
 user_route.get('/verify', user_controller.verifyMail);
@@ -73,6 +73,16 @@ user_route.get('/forget-password', auth.isLogout, user_controller.forgetPassword
 
 // for setting the new password
 user_route.post('/forget-password', upload.single('image'), user_controller.resetPassword);
+
+// if page not found
+user_route.get('/404', user_controller.notFound);
+
+// adding blogs
+user_route.get('/subject', user_controller.displaySubject);
+
+user_route.get('/postBlog', user_controller.loadBlog);
+
+user_route.post('/postBlog', upload.single('image'), user_controller.takeBlog);
 
 
 
