@@ -60,7 +60,7 @@ const loadDashboard = async(req, res) => {
                     return;
                 }
                 else{
-                    return res.render('adminDashboard', {subject_list: data});
+                    return res.render('adminDashboard', {subject_list: data, admin_name: userData.name});
                 }
             });
 

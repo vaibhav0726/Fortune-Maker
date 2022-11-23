@@ -5,7 +5,6 @@ var subjectSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique: true
     },
     description: {
         type: String,
@@ -15,6 +14,11 @@ var subjectSchema = new mongoose.Schema({
     is_verified: {
         type: Number,
         default: 0
+    },
+    user_name:{
+        type: String,
+        required: true,
+        default: '',
     }
 });
 

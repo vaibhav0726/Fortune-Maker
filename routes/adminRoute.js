@@ -6,11 +6,13 @@ const session = require('express-session');
 const config = require('../config/config');
 const path = require('path');
 
+
 admin_route.use(session({secret:config.sessionSecret}));
 
 const bodyParser = require('body-parser');
 admin_route.set(bodyParser.json());
 admin_route.set(bodyParser.urlencoded({extended: true}));
+
 
 admin_route.set('view engine', 'ejs');
 admin_route.set('views', './views/admin');

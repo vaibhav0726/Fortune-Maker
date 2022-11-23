@@ -342,21 +342,21 @@ const displaySubject = async(req, res) => {
         
         const subject = await Subjects.find({name: subjectName}).count() > 0;
         if(subject){
-            console.log('found!');
+            // console.log('found!');
             Subjects.find({name: subjectName}, function(err, subject){
                 if(err){
                     console.log('error while sending the subject list to blog', err.message);
                     return res.render('404', {message: 'the page you are looking for not available!'});
                 }
                 else{
-                    console.log('found!');
-                    console.log(subject[0].is_verified);
+                    // console.log('found!');
+                    // console.log(subject[0].is_verified);
                     if(subject[0].is_verified === 1){
-                        console.log('inside the page you are looking for');
+                        // console.log('inside the page you are looking for');
                         return res.render('blog', {message: 'successfully', name: subjectName, subject_list: subject[0]});
                     }
                     else{
-                        console.log('inside the page you are not looking for');
+                        // console.log('inside the page you are not looking for');
 
                         return res.render('404', {message: 'the page you are looking for not available!'});
                     }
@@ -386,9 +386,20 @@ const loadBlog = async(req, res) => {
 // storing the blog
 const takeBlog = async(req, res) => {
     try {
+        const userData = await User.findOne({_id: req.session.user_id});
+        var name = '';
+        if(userData){
+            name = userData.name;
+        }
+        else{
+            console.log('error while retrieving user name');
+            return;
+        }
+
         const new_subject = new Subjects({
             name: req.body.name,
-            description: req.body.description
+            description: req.body.description,
+            user_name: name
         });
         const userSubject = await new_subject.save();
         if(userSubject){

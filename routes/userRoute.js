@@ -78,9 +78,9 @@ user_route.post('/forget-password', upload.single('image'), user_controller.rese
 user_route.get('/404', user_controller.notFound);
 
 // adding blogs
-user_route.get('/subject', user_controller.displaySubject);
+user_route.get('/subject', auth.isLogin, user_controller.displaySubject);
 
-user_route.get('/postBlog', user_controller.loadBlog);
+user_route.get('/postBlog', auth.isLogin, user_controller.loadBlog);
 
 user_route.post('/postBlog', upload.single('image'), user_controller.takeBlog);
 
