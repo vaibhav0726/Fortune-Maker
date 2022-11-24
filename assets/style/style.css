@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 :root{
-    --main-color:#d3ad7f;
+    --main-color:#0076de;
     --black:#13131a;
     --bg:#010103;
     --border:.1rem solid rgba(255,255,255,.3);
@@ -34,7 +34,8 @@ html{
     padding:.9rem 3rem;
     font-size: 1.7rem;
     color:#fff;
-    background: var(--main-color);
+    /* background: var(--main-color); */
+    background: #0076de;
     cursor: pointer;
 }
 
@@ -225,7 +226,8 @@ html{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(125deg,#282636cc 40%,#120F2D00 70%), url('../images/pexels-pixabay-301920.jpg') no-repeat center center/cover;
+    background: linear-gradient(125deg,#282636d3 40%,#3a347003 70%), url('../images/29493.jpg') no-repeat center center/cover;
+    /* opacity: 50%; */
 }
 
 .home .content{
@@ -288,7 +290,7 @@ html{
 }
 .content-section .content h3{
 	margin-top: 20px;
-	color:#fea900;
+	color: var(--main-color);
 	font-size: 21px;
 }
 .content-section .content p{
@@ -301,7 +303,7 @@ html{
 	margin-top: 30px;
 }
 .content-section .content .button a{
-	background-color: #e78611;
+	background-color: #0076de;
 	padding:12px 40px;
 	text-decoration: none;
 	color:#fff;
@@ -316,7 +318,7 @@ html{
 	margin: 40px 40px;
 }
 .content-section .social i{
-	color:#e78611;
+	color: var(--main-color);
 	font-size: 30px;
 	padding:0px 10px;
 }
@@ -388,6 +390,10 @@ html{
     justify-content: space-evenly;
     align-items: center;
 }
+.card-section > a{
+    background: transparent;
+}
+
 .card-section .container{
     width: 250px;
     height: 300px;
@@ -417,7 +423,7 @@ html{
 .card-section .container:hover > .card > .back{
     display: flex;
     animation: back 1s;
-    transition: ease-in-out 3s;
+    transition: ease-in-out 0.9s;
 }
 
 @keyframes back {
@@ -467,7 +473,10 @@ html{
     }
 }
 .card-section .container .card .front img{
-    opacity: 0.8;
+    opacity: 1;
+    height: 262px;
+    opacity: 1;
+    width: 233px;
 }
 .card-section .container .card .front h3{
     position: absolute;
@@ -479,6 +488,7 @@ html{
 .card-section .container .card .back{
     position: absolute;
     background: linear-gradient(to right, #0f78a5, #297b94, #06242e);
+   
     display: none;
     flex-direction: column;
     justify-content: space-evenly;
@@ -529,7 +539,7 @@ html{
 #load-more-btn:hover a{
     background-color: rgb(250, 244, 244);
     color: var(--main-color);
-    transition: ease-in-out 0.5s;
+    transition: ease-in 0.2s;
 }
 
 /* Our Team */
@@ -538,6 +548,7 @@ html{
     text-align: center;
 }
 .main{
+   
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -559,7 +570,7 @@ html{
   }
   .profile-card:hover{
     border-radius: 10px;
-    height: 260px;
+    /* height: 260px; */
   }
   .profile-card .img{
     position: relative;
@@ -581,10 +592,17 @@ html{
     border-radius: 10px;
   }
   .caption{
+    margin-top: 36px;
     text-align: center;
     transform: translateY(-80px);
     opacity: 0;
     transition: .6s;
+  }
+  /* .caption h2{
+    margin-bottom: -0.5rem !important;
+  } */
+  .social-links{
+    margin-top: -20px;
   }
   .profile-card:hover .caption{
     opacity: 1;

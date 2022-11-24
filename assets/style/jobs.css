@@ -47,7 +47,7 @@ h1 {
 }
 
 .navbar-menu{
-    width: 31rem;
+    width: 21rem;
     display: flex;
     justify-content: space-between;
 
@@ -644,5 +644,7 @@ z-index: 3;
         padding: 0.5rem 0.5rem;
     }
     
+=======
+
 
 }

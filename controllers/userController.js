@@ -121,6 +121,7 @@ const insertUser = async(req, res) =>{
         }
     } catch (error) {
         console.log("error while registering:- ",error.message);
+        return res.render('registration', {message: 'User email already exits'});
     }
 }
 
