@@ -225,6 +225,7 @@ transition: 0.3s ease;
     color: #787d8d;
 }
 .board .people{
+    margin-top: 40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
