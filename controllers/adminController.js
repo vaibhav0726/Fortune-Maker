@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
 const Job = require('../models/jobModel');
+const Subjects = require('../models/subjectModel');
 const bcrypt = require('bcrypt');
 
 const loadLogin = async(req, res) => {
@@ -52,7 +53,18 @@ const loadDashboard = async(req, res) => {
             return res.redirect('/admin');
         }
         else{
-            return res.render('home');
+
+            Subjects.find({}, function(err, data){
+                if(err){
+                    console.log('error while loading data', err);
+                    return;
+                }
+                else{
+                    return res.render('adminDashboard', {subject_list: data, admin_name: userData.name});
+                }
+            });
+
+            // return res.redirect('/admin/adminDashboard', {});
         }
     } catch (error) {
         console.log("error while loading dashboard", error.message);
@@ -76,6 +88,7 @@ const forgetLoad = async(req, res) => {
     }
 };
 
+// post method for adding jobs
 const addJobs = async(req, res) => {
     try {
         const job = new Job({
@@ -99,6 +112,54 @@ const addJobs = async(req, res) => {
     }
 };
 
+//get method for adding jobs
+const loadAddJobs = async(req, res) => {
+    try {
+        const userData = await User.findById({_id: req.session.user_id});
+        if(userData.is_admin === 0){
+            return res.redirect('/admin');
+        }
+        else{
+            return res.render('addJobs');
+        }
+    } catch (error) {
+        console.log("error while loading dashboard", error.message);
+    }
+};
+
+// for accepting the subjects
+const addSubject = async(req, res) => {
+    try {
+        const updatedInfo =  await Subjects.updateOne({
+            _id: req.query.id,
+        },
+        {
+            $set: {
+                is_verified: 1
+            },
+        });
+        return res.redirect('back');
+    } catch (error) {
+        console.log('error while adding subject', error.message);
+    }
+};
+
+// rejectSubject
+const rejectSubject = async(req, res) => {
+    try {
+        let id = req.query.id;
+        Subjects.findByIdAndDelete(id, function(err){
+            if(err){
+                console.log('error in rejecting the subject', err);
+                return;
+            }
+            return res.redirect('back');
+        });
+    } catch (error) {
+        console.log('error while rejecting subject', error.message);
+    }
+};
+
 module.exports = {
     loadLogin,
     verifyLogin,
@@ -106,5 +167,7 @@ module.exports = {
     adminLogout,
     forgetLoad,
     addJobs,
-
+    loadAddJobs,
+    addSubject,
+    rejectSubject
 }

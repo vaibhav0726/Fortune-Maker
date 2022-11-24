@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=`ge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../style/admin.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <section id="menu">
+      <div class="logo">
+        <img src="" alt="" />
+        <h2>FORTUNE MAKER</h2>
+      </div>
+
+      <div class="items">
+        <!-- <li> <img src="./images/bar-chart.png" alt="">   <a href="#">Dashboard</a></li> -->
+        <li><i class="fa-solid fa-gauge"></i> <a href="#">Dashboard</a></li>
+      </div>
+    </section>
+
+    <section class="navbar" id="interface" style="position: fixed">
+      <div class="navigation">
+        <div class="n1">
+          <div class="search">
+            <button class="postjobs" style="margin-right: 10px">
+              <a
+                href="/admin/addJobs"
+                style="color: white; text-decoration: none"
+                >Post Jobs</a
+              >
+            </button>
+            <button class="postjobs">
+              <a
+                href="/admin/logout"
+                style="color: white; text-decoration: none"
+                >Logout</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="profile">
+          <!-- <i class="far fa-bell"></i> -->
+          <h4>Hello! <%= admin_name %></h4>
+          <!-- <img src="./images/vaibhav.png" alt=""> -->
+        </div>
+      </div>
+
+      <h3 class="i-name">Dashboard</h3>
+
+      <!-- <div class="values">
+        <div class="val-box">
+          <i class="fas fa-users"></i>
+          <div>
+            <span>New Requests</span>
+          </div>
+        </div>
+
+        <div class="val-box">
+          <i class="fas fa-users"></i>
+          <div>
+            <h3>3843</h3>
+            <span>Total Requests</span>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="board">
+        <table width="100%">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Topic</td>
+              <td>Description</td>
+              <td>Approve</td>
+              <td>Deny</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(subject_list !== 'undefined' ){ %> 
+            <% for (let i of subject_list){ %>
+                 <% if(i.is_verified === 0){ %>
+            <tr>
+              <td class="people">
+                <!-- <img src="./images/santosh.png" alt=""> -->
+                <div class="people-de">
+                  <h5><%= i.user_name %></h5>
+                </div>
+              </td>
+              <td class="people-des">
+                <h5><%= i.name%></h5>
+              </td>
+              <td class="active"><p><%= i.description%></p></td>
+              <td class="role">
+                <button>
+                  <a
+                    href="/admin/addSubject/?id=<%= i._id%>"
+                    style="color: white; text-decoration: none"
+                    >Accept</a
+                  >
+                </button>
+              </td>
+              <td class="deny">
+                <button>
+                  <a
+                    href="/admin/rejectSubject/?id=<%= i._id%>"
+                    style="color: white; text-decoration: none"
+                    >Reject</a
+                  >
+                </button>
+              </td>
+            </tr>
+            
+            <% } } } %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8c02bb7263.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#menu-btn").click(function () {
+        $("menu").toggleClass("active");
+      });
+    </script>
+  </body>
+</html>

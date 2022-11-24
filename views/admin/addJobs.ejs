@@ -29,69 +29,57 @@
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                     <input type="text" name="name" placeholder="Enter Your Name" id="form3Example1c" class="form-control" required />
-                      <label class="form-label" for="form3Example1c">Your Name</label>
+                      <label class="form-label" for="form3Example1c">Your Company Name</label>
                     </div>
                   </div>
-
-                  <% 
-                        if((typeof message !== 'undefined') && (message == 'Name Should be in string')){
-                            %> <p style="color: red;"> <%= message %> </p>
-                            <%
-                        }
-                    %>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                        <input type="email" name="email" placeholder="Enter Your Email" required id="form3Example3c" class="form-control" required/>
-                      <label class="form-label" for="form3Example3c">Your Email</label>
+                        <input type="string" name="role" placeholder="Enter The role" required id="form3Example3c" class="form-control" required/>
+                      <label class="form-label" for="form3Example3c">Enter the Role</label>
                     </div>
                   </div>
-                    <% 
-                        if((typeof message !== 'undefined') && (message == 'Use gla email id' && message != 'Name Should be in string')){
-                            %> <p style="color: red;"> <%= message %> </p>
-                            <%
-                        }
-                    %>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                        <input type="password" name="password" placeholder="Enter Your Password" id="form3Example4c" class="form-control" required/>
-                      <label class="form-label" for="form3Example4c">Password</label>
+                        <input type="string" name="description" placeholder="Enter The Job Description" id="form3Example4c" class="form-control" required/>
+                      <label class="form-label" for="form3Example4c">Description</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                        <input type="number" name="uniRoll" id="form3Example4cd" placeholder="Enter Your University RollNo" class="form-control" required/>
-                      <label class="form-label" for="form3Example4cd">Enter Your University RollNo</label>
+                        <input type="string" name="skill1" id="form3Example4cd" placeholder="Enter the skill 1" class="form-control" required/>
+                      <label class="form-label" for="form3Example4cd">Enter the skill 1</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                        <input type="string" name="mno" placeholder="Enter Your Phone Number" id="form3Example4cd" class="form-control" required/>
-                      <label class="form-label" for="form3Example4cd">Enter Your Phone Number</label>
+                        <input type="string" name="skill2" id="form3Example4cd" placeholder="Enter the skill 2" class="form-control" required/>
+                      <label class="form-label" for="form3Example4cd">Enter the skill 2</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="file" name="image" id="form3Example4cd" class="form-control" required/>
+                      <label class="form-label" for="form3Example4cd">Enter the company image</label>
                     </div>
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <input type="submit" value="Register" class="btn btn-primary btn-lg"></input>
-                    <button type="button" class="btn btn-primary btn-lg" style="margin-left: 10px;"><a href="/login" style="color: white; text-decoration: none;">Login</a></button>
-                  </div>
-                  
-                </form>
-                <% 
-                    if((typeof message !== 'undefined') && (message !== 'Use gla email id') && (message !== 'Name Should be in string')){
-                        %> <p style="color: green;"> <%= message %> </p>
-                        <%
-                    }
-                    
-                %>
+                    <input type="submit" value="register" class="btn btn-primary btn-lg"></input>
+                    <div style="margin-left: 20px; margin-top: 10px;"><a href="/admin/logout">Logout</a></div>
 
+                  </div>
+
+                </form>
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
@@ -105,13 +93,7 @@
       </div>
     </div>
   </div>
+  
 </section>
 </body>
 </html>
-
-
-
-
-
-
-

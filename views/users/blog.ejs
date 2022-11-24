@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/blogpost.css" />
+    <title>iBlog - Heaven for bloggers</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h3>Fortune<span>Maker</span></h3>
+      </div>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+        <a href="#job">Job</a>
+        <a href="#our-team">Our Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <form action="/search.html" method="get">
+          <input
+            class="form-input"
+            type="text"
+            name="query"
+            placeholder="Article Search"
+          />
+          <button class="btn">Search</button>
+        </form>
+      </div>
+    </header>
+    <div class="max-width-1 m-auto">
+      <hr />
+    </div>
+    <div class="post-img">
+      <img src="../images/blog.jpeg" alt="" />
+    </div>
+    <div class="m-auto blog-post-content max-width-2 m-auto my-2">
+      <h1 class="font1"><%= name %></h1>
+      <p class="font1">
+        <%= subject_list.description %>
+        </p>
+    </div>
+
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <h3>Fortune<span>Maker</span></h3>
+
+        <p class="footer-links">
+          <a href="#">Home</a>
+          |
+          <a href="#">About</a>
+          |
+          <a href="#">Contact</a>
+          |
+          <a href="#">Blog</a>
+        </p>
+
+        <p class="footer-company-name">
+          Copyright © 2022 <strong>Fortune Maker</strong> All rights reserved
+        </p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p>GLA University, Mathura</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 819***43</p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="">fortune.maker@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the company</span>
+          <strong>Fortune Maker</strong> is a Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Sequi, delectus Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Perferendis atque quis
+        </p>
+        <div class="footer-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="footer">
+      <p>Copyright &copy; Fortune Maker.com</p>
+    </div>
+  </body>
+</html>
