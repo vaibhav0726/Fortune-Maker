@@ -1,80 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./style/login.css" />
-    <title>Post Blog</title>
-  </head>
-  <body>
-    <section class="vh-100">
-      <div class="container-fluid h-custom">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-md-9 col-lg-6 col-xl-5">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-              class="img-fluid"
-              alt="Sample image"
-              style="width: 690px"
-            />
-          </div>
-          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <h1>Post Blog</h1>
-            <% if(typeof message !== 'undefined'){ %>
-            <h4 style="color: red"><%= message %></h4>
-            <% } %>
-            <form action="/postBlog" method="post" enctype="multipart/form-data">
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input
-                  type="string"
-                  name="name"
-                  id="form3Example3"
-                  class="form-control form-control-lg"
-                  placeholder="Enter the subject name"
-                />
-                <label class="form-label" for="form3Example3"
-                  >Subject Name</label
-                >
-              </div>
 
-              <!-- Password input -->
-              <div class="form-outline mb-3">
-                <input
-                  type="string"
-                  name="description"
-                  id="form3Example4"
-                  class="form-control form-control-lg"
-                  placeholder="Enter the blog"
-                />
-                <label class="form-label" for="form3Example4">Write the blog</label>
-              </div>
+<html lang="en" dir="ltr">
 
-              <div class="text-center text-lg-start mt-4 pt-2">
-                <button
-                  type="submit"
-                  value="blog"
-                  class="btn btn-primary btn-lg"
-                  style="padding-left: 2.5rem; padding-right: 2.5rem"
-                >
-                  Post Blog
-                </button>
-                <p class="small fw-bold mt-2 pt-1 mb-0">
-                  Don't want to write the blog
-                  <a href="/home" class="link-danger">Go To Home</a>
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/postBlog.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Post Blog</h2>
+        <% if(typeof message !== 'undefined'){ %>
+          <h4 style="color: red"><%= message %></h4>
+          <% } %>
+        <form action="/postBlog" method="post" enctype="multipart/form-data">
+            <div class="input-box">
+                <select name="name" id="">
+                    <option value="" selected disabled>Select Subject</option>
+                    <option value="cprogramming">C Programming</option>
+                    <option value="english1">English-1</option>
+                    <option value="engmath">Eng Maths-1</option>
+                    <option value="physics">Physics</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="mechanical">Mechanical</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="english2">English-2</option>
+                    <option value="engmath2">Eng Maths-2</option>
+                    <option value="python">Python</option>
+                    <option value="dsa">DSA</option>
+                    <option value="discretemath">Discrete Maths-3</option>
+                    <option value="microprocessor">Microprocessor</option>
+                    <option value="dbms">DBMS</option>
+                    <option value="computernetwork">Computer Network</option>
+                    <option value="computerorganisation">Computer Orgaisation</option>
+                    <option value="java">Java</option>
+                    <option value="operating">Operating Sytsem</option>
+                    <option value="softwareeng">Software Eng.</option>   
+                </select>
+            </div>
+            <div class="input-box blog-text">
+              <!-- <input
+              type="string"
+              name="description"
+              placeholder="Enter the blog"
+              required
+            /> -->
+            <textarea type="string"  name="description" placeholder="Enter the blog" cols="50" rows="10" required></textarea>
+            </div>
+            <div class="input-box button">
+                <input type="Submit" value="Submit Now">
+            </div>
+            <p class="small fw-bold mt-2 pt-1 mb-0">
+              Don't want to write the blog
+              <a href="/home" class="link-danger">Go To Home</a>
+            </p>
+        </form>
+    </div>
+</body>
+
 </html>
