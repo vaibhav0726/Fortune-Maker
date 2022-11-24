@@ -247,7 +247,8 @@ thead td{
 }
 
 tbody tr td{
-    padding: 10px 30px 25px 66px;
+    /* padding: 10px 30px 25px 66px; */
+    padding: 10px 21px 25px 66px;
 }
 .role,
 .deny{
