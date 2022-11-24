@@ -61,106 +61,37 @@
 
        <!-- job listing -->
        <section class="job-list" id="jobs">
+        <% job_list.reverse(); %> 
+        <% for(let job of job_list) { %>
         <div class="job-card">
             <div class="job-name">
-                <img src="./images/Tesla_Motors.svg.png" class="job-profile" alt="">
+                <img src="userImages/<%= job.image %>" class="job-profile" alt="<%= job.image %>">
                 <div class="job-detail">
-                    <h4>Tesla</h4>
-                    <h3>Mechanical Engineer</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, fuga!</p>
+                    <h4><%= job.name %></h4>
+                    <h3><%= job.role %></h3>
+              <p><%= job.description %></p>
                 </div>
             </div>
             <div class="job-label">
-                <a href="#" id="requirement" class="label-a">HTML</a>
-                <a href="#" id="requirement" class="label-b">CSS</a>
-                <a href="#" id="requirement" class="label-c">Javascript</a>
+                <a href="#" class="label-a"><%= job.skill1 %></a>
+                <a href="#" class="label-b"><%= job.skill2 %></a>
             </div>
-            <div class="job-posted">
+            <!-- <div class="job-posted">
                 Posted 2 min ago
-            </div>
+            </div> -->
         </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="./images/Tesla_Motors.svg.png" class="job-profile" alt="">
-                <div class="job-detail">
-                    <h4>Tesla</h4>
-                    <h3>Mechanical Engineer</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, fuga!</p>
-                </div>
-            </div>
-            <div class="job-label">
-                <a href="#" id="requirement" class="label-a">HTML</a>
-                <a href="#" id="requirement" class="label-b">dsa</a>
-                <a href="#" id="requirement" class="label-c">Javascript</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 min ago
-            </div>
+        <% } %> 
+        <!-- <button class="job-more"> More List</button> -->
+    </section>
+
+
+    <section class="join">
+        <div class="join-details"> 
+           <h1 class="section-title"> Have new Jobs?</h1>
+           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur nemo beatae velit iste nisi laudantium rem deserunt, facilis a odio.</p>
         </div>
-
-
-        <div class="job-card">
-            <div class="job-name">
-                <img src="./images/amazon logo.jpg" class="job-profile" alt="">
-                <div class="job-detail">
-                    <h4>Amazon</h4>
-                    <h3>Software Engineer</h3>
-                    
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ipsum.</p>
-
-                </div>
-            </div>
-            <div class="job-label">
-                <a href="#" id="requirement" class="label-a">HTML</a>
-                <a href="#" id="requirement" class="label-b">CSS</a>
-                <a href="#" id="requirement" class="label-c">dsa</a>
-
-            </div>
-            <div class="job-posted">
-                Posted 2 min ago
-            </div>
-        </div>
-
-
-
-        <div class="job-card">
-            <div class="job-name">
-                <img src="./images/google logo.jpg" class="job-profile" alt="">
-                <div class="job-detail">
-                    <h4>Google</h4>
-                    <h3>Software Engineer</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, sapiente!</p>
-                </div>
-            </div>
-            <div class="job-label">
-                <!-- <a href="#" id="requirement" class="label-a">HTML</a> -->
-                <a href="#" id="requirement"  class="label-b">CSS</a>
-                <a href="#" id="requirement" class="label-c">Javascript</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 min ago
-            </div>
-        </div>
-
-
-        <div class="job-card">
-            <div class="job-name">
-                <img src="./images/microsoft-logo-transparent-image.png" class="job-profile" alt="">
-                <div class="job-detail">
-                    <h4>microsoft</h4>
-                    <h3>Software Engineer</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, sint.</p>
-                </div>
-            </div>
-            <div class="job-label">
-                <a href="#"  id="requirement"  class="label-a">HTML</a>
-                <a href="#"  id="requirement"  class="label-b">CSS</a>
-                <a href="#"  id="requirement"  class="label-c">Javascript</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 min ago
-            </div>
-        </div>
+        <a href="/admin/addJobs" class="join-button" style="text-decoration: none; width:110px;">Add here</a>
+    </section>
      
 
 
