@@ -79,31 +79,37 @@ const insertUser = async(req, res) =>{
     try {
         const spassword = await securePassword(req.body.password);
         let regex = /[a-z0-9]+@gla.ac.in/;
-        let nameRegex = /^[A-Za-z]+$/;
-        
+        let nameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        let numberRegex = /^[6-9]{1}[0-9]{9}$/;
+
         if(regex.test(req.body.email)){
             if(nameRegex.test(req.body.name)){
-                const user = new User({
-                    name: req.body.name,
-                    email: req.body.email,
-                    mobile: req.body.mno,
-                    uniRoll: req.body.uniRoll,
-                    password: spassword,
-                    is_admin: 0,
-                });
-        
-                // using await because it returns a promise
-                const userData = await user.save();
-        
-                // if userData saved successfully
-                if(userData){
-        
-                    sendVerifyMail(req.body.name, req.body.email, userData._id);
-        
-                    res.render('registration', {message: 'Your registration has been successfully completed, Please verify your mail'});
+                if(numberRegex.test(req.body.mno)){
+                    const user = new User({
+                        name: req.body.name,
+                        email: req.body.email,
+                        mobile: req.body.mno,
+                        uniRoll: req.body.uniRoll,
+                        password: spassword,
+                        is_admin: 0,
+                    });
+            
+                    // using await because it returns a promise
+                    const userData = await user.save();
+            
+                    // if userData saved successfully
+                    if(userData){
+            
+                        sendVerifyMail(req.body.name, req.body.email, userData._id);
+            
+                        res.render('registration', {message: 'Your registration has been successfully completed, Please verify your mail'});
+                    }
+                    else{
+                        res.render('registration', {message: 'User registration failed'});
+                    }
                 }
                 else{
-                    res.render('registration', {message: 'User registration failed'});
+                    res.render('registration', {message: 'Number should be in correct format'});
                 }
             }
             else{
