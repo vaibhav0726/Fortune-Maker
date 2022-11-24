@@ -225,6 +225,7 @@ transition: 0.3s ease;
     color: #787d8d;
 }
 .board .people{
+    margin-top: 40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -246,7 +247,8 @@ thead td{
 }
 
 tbody tr td{
-    padding: 10px 30px 25px 66px;
+    /* padding: 10px 30px 25px 66px; */
+    padding: 10px 21px 25px 66px;
 }
 .role,
 .deny{
