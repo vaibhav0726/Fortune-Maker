@@ -171,7 +171,7 @@ const verifyLogin = async(req, res) => {
                 }
                 else{
                     req.session.user_id = userData._id;
-                    return res.redirect('/postBlog');
+                    return res.redirect('back');
                 }
             }
             else{
