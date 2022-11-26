@@ -79,7 +79,7 @@ const insertUser = async(req, res) =>{
     try {
         const spassword = await securePassword(req.body.password);
         let regex = /[a-z0-9]+@gla.ac.in/;
-        let nameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        let nameRegex = /^[a-zA-Z]+[a-zA-Z]+$/;
         let numberRegex = /^[6-9]{1}[0-9]{9}$/;
 
         if(regex.test(req.body.email)){
@@ -171,7 +171,7 @@ const verifyLogin = async(req, res) => {
                 }
                 else{
                     req.session.user_id = userData._id;
-                    res.redirect('/home');
+                    return res.redirect('/postBlog');
                 }
             }
             else{
